@@ -1,0 +1,115 @@
+:root {
+  color-scheme: dark;
+  --background: #171717;
+  --foreground: #fafafa;
+  --soft: #c4ccd2;
+  --accent: #8cd4f5;
+  --rule: #355160;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0 auto;
+  min-height: 100vh;
+  min-height: 100svh;
+  max-width: 80rem;
+  padding-inline: clamp(1.25rem, 6vw, 4.5rem);
+  background: var(--background);
+  color: var(--foreground);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  line-height: 1.55;
+}
+
+html { background: var(--background); }
+
+.masthead {
+  display: flex;
+  justify-content: flex-end;
+  padding-block: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.logo {
+  display: block;
+  width: clamp(8rem, 17vw, 11.25rem);
+  height: auto;
+}
+
+.hero {
+  align-self: center;
+  padding-block: clamp(3rem, 9vw, 7rem);
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-weight: 450;
+  letter-spacing: -.045em;
+  line-height: 1.12;
+}
+
+.hero h1 { font-size: clamp(2.5rem, 9vw, 5.75rem); }
+
+.hero p {
+  color: var(--soft);
+  margin: 1rem auto 0;
+  max-width: 26rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.page-end {
+  border-top: 1px solid var(--rule);
+  padding-block: .75rem 1.25rem;
+  text-align: right;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: .23em;
+}
+
+.page-end a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+}
+
+a:hover { color: var(--foreground); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.profile {
+  width: min(100%, 36rem);
+  justify-self: center;
+  padding-block: clamp(1rem, 4vw, 3rem) clamp(2rem, 5vw, 4rem);
+}
+
+.profile h1 {
+  font-size: clamp(2rem, 7vw, 3.85rem);
+  text-align: center;
+  margin-bottom: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.profile h1 span { display: block; }
+
+.profile-card {
+  background: #fff;
+  color: #151c21;
+  border: 1px solid #4f7a91;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.profile-card h2 {
+  font-size: 1.25rem;
+  margin: 0 0 .5rem;
+}
+
+.profile-card p { margin: 0 0 .875em; }
+.profile-card p:last-child { margin-bottom: 0; }
+.profile-card section + section { border-top: 1px solid #d7e1e6; margin-top: 1.35rem; padding-top: 1.35rem; }
+
+@media (max-width: 30rem) {
+  .hero { padding-block: 2.5rem; }
+  .page-end { padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+}
